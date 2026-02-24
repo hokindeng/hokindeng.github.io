@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <!-- Title -->
   <title>Hokin Deng</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=1000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Isotope JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -65,18 +64,24 @@
           <h3>
             <a href="https://video-reason.com/">A Very Big Video Reasoning Dataset</a>
           </h3>
-          <p>
-            <a href="https://video-reason.com/">Website</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-            <a href="https://github.com/VBVR-DataFactory">Data Engines</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-            <a href="https://github.com/Video-reason">Tools</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset">Training Dataset</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data">Eval Dataset</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-            <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard">Leaderboard</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+          <div class="authors-container">
+            <p class="authors">
+              Maijunxian Wang, Ruisi Wang, Juyi Lin, Ran Ji, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai, Hokin Deng
+            </p>
+            <button class="authors-toggle">show all</button>
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2602.20159">Paper</a><span class="sep">/</span>
+            <a href="https://video-reason.com/">Website</a><span class="sep">/</span>
+            <a href="https://github.com/VBVR-DataFactory">Data Engines</a><span class="sep">/</span>
+            <a href="https://github.com/Video-reason">Tools</a><span class="sep">/</span>
+            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset">Training Dataset</a><span class="sep">/</span>
+            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data">Eval Dataset</a><span class="sep">/</span>
+            <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard">Leaderboard</a><span class="sep">/</span>
             <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2">Model</a>
-          </p>
+          </div>
         </div>
       </div>
-      -->
 
     </div> <!-- /.grid -->
   </div> <!-- /#main -->
@@ -118,7 +123,6 @@
     });
 
     function update_isotope() {
-      // Retrieve cached button click.
       var defaultFilterValue = localStorage.getItem('filterValue');
       if (defaultFilterValue == null) {
         defaultFilterValue = ".publication";
@@ -136,6 +140,15 @@
     }
 
     update_isotope();
+
+    // Author list expand/collapse.
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('authors-toggle')) {
+        var container = e.target.closest('.authors-container');
+        var isExpanded = container.classList.toggle('expanded');
+        e.target.textContent = isExpanded ? 'show fewer' : 'show all';
+      }
+    });
   </script>
 </body>
 </html>

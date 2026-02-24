@@ -9,8 +9,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -21,7 +21,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -46,7 +46,7 @@ table {
 
 /**************************************************/
 
-#body{
+#body {
   font-family: 'Asap', roboto, sans-serif;
   font-size: 1em;
   line-height: 1.5em;
@@ -193,78 +193,36 @@ h2 {
 }
 
 /**************************************************/
-/* Gallery of 3 preview videos. */
+/* Publication details. */
 
-.previews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  height: 14em;
+.publication {
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
 }
-
-.previews video {
-  border-radius: 5px;
-}
-
-.previews a:hover {
-  border: none;
-}
-
-.preview1 {
-  grid-column: 1;
-  width: 100%;
-}
-.preview2 {
-  grid-column: 2;
-  width: 100%;
-}
-.preview3 {
-  grid-column: 3;
-  width: 100%;
-}
-
-/**************************************************/
-/* Buttons for showing more or less highlights. */
-
-.toggle-button {
-  margin-top: 2em;
-}
-
-.toggle-button a {
-  color: #a0a8b0;
-}
-
-.toggle-button a:hover {
-  color: rgb(20, 110, 190);
-}
-
-/**************************************************/
-/* Publication details (thumbnail media, title, and description). */
 
 .thumbnail {
-/*  width: 21%;*/
-  width: 18%;
-  float: left;
-  margin-right: 2%;
+  width: 180px;
+  flex-shrink: 0;
 }
 
 .thumbnail:hover {
   border-bottom: none;
 }
 
-.thumbnail img {
-  margin-top: 0.4em;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-}
-
+.thumbnail img,
 .thumbnail video {
   margin-top: 0.4em;
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-description {
+  flex: 1;
+  min-width: 0;
 }
 
 h3 {
@@ -278,42 +236,111 @@ h3 a {
 
 h3 a:hover {
   color: rgb(20, 110, 190);
+  border-bottom: none;
 }
 
-h4 {
-  font-size: 1em;
+/* Authors */
+.authors-container {
+  margin-top: 0.3em;
+}
+
+.authors {
+  font-size: 0.9em;
   line-height: 1.5em;
+  color: #a0a8b0;
+  max-height: 3em;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
-h4 a {
+.authors-container.expanded .authors {
+  max-height: 500px;
+}
+
+.authors-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8em;
+  color: #a0a8b0;
+  padding: 0;
+  margin-top: 0.2em;
+  font-family: inherit;
+}
+
+.authors-toggle:hover {
   color: rgb(20, 110, 190);
 }
 
-h4 a:hover {
-  color: rgb(20, 110, 190);
-}
-
-.publication {
-  margin-bottom: 0.5em;
-}
-
-.publication p {
+/* Publication links */
+.pub-links {
+  margin-top: 0.5em;
   font-size: 1em;
   line-height: 1.5em;
   color: #a0a8b0;
 }
 
-.project-description {
-  width: 80%;
-  float: left;
+.pub-links a {
+  color: rgb(20, 110, 190);
+}
+
+.pub-links a:hover {
+  border-bottom: 1px solid rgb(20, 110, 190);
+}
+
+.pub-links .sep {
+  margin: 0 0.3em;
+  color: #ccc;
 }
 
 /**************************************************/
-/* Subtle footer at the bottom of the page. */
+/* Footer. */
 
 #footer {
   color: #a0a8b0;
   position: absolute;
   bottom: 0;
   line-height: 2.5em;
+}
+
+/**************************************************/
+/* Responsive. */
+
+@media (max-width: 700px) {
+  #main {
+    width: auto;
+    padding: 0 1.5em;
+  }
+
+  #intro {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 3em;
+    text-align: center;
+  }
+
+  #intro-text {
+    width: 100%;
+  }
+
+  #intro-image {
+    margin: 0;
+    width: 10em;
+    height: 10em;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    line-height: 2em;
+  }
+
+  .publication {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .thumbnail {
+    width: 100%;
+    max-width: 240px;
+  }
 }
