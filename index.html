@@ -1,154 +1,32 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Hokin Deng</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Isotope JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
-  <!-- Custom Style -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet"
-  >
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-  </style>
+<meta charset="utf-8">
+<title>Hokin Deng — hokindeng.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://hokindeng.com/">
+<meta http-equiv="refresh" content="0; url=https://hokindeng.com/">
+<meta name="robots" content="noindex, follow">
+<style>
+  html { color-scheme: light dark; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    font: 16px/1.6 "Asap", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #fff; color: #111;
+    padding: 2rem; text-align: center;
+  }
+  @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; } }
+  a { color: inherit; }
+  p { margin: .4rem 0; }
+  .muted { opacity: .6; font-size: .875rem; }
+</style>
 </head>
-
-<body id="body">
-  <div id="main">
-    <div id="intro">
-      <div id="intro-text">
-        <h1>Hokin Deng</h1>
-        <p>
-          Hi, there! I work at the intersection of human and machine intelligence. Previously, I studied philosophy at Johns Hopkins.
-          There, I was mentored and deeply influenced by
-          <a href="https://en.wikipedia.org/wiki/Michael_Williams_(philosopher)">Michael Williams</a>,
-          <a href="https://en.wikipedia.org/wiki/Peter_Achinstein">Peter Achinstein</a>,
-          and <a href="https://de.wikipedia.org/wiki/Eckart_F%C3%B6rster_(Philosoph)">Eckart Förster</a>.
-          <br><br>
-          <a href="https://scholar.google.com/citations?user=J3JfO1gAAAAJ&hl=en">G.Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="https://x.com/DengHokin">X</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          Contact me: hokind@andrew.cmu.edu
-          <br><br>
-        </p>
-      </div>
-
-      <div id="intro-image">
-        <img src="image.jpg" alt="Hokin Deng">
-      </div>
-    </div>
-
-    <div id="filters" class="button-group">
-      <button class="button is-checked" data-filter=".publication">Pieces of Inquiry</button>
-    </div>
-
-    <div class="grid">
-      <!-- Publications -->
-
-      <div class="list-item publication" data-category="publication">
-        <a href="https://video-reason.com/" class="thumbnail">
-          <video src="images/vbvr.mp4" autoplay loop muted playsinline></video>
-        </a>
-        <div class="project-description">
-          <h3>
-            <a href="https://video-reason.com/">A Very Big Video Reasoning Suite</a>
-          </h3>
-          <div class="authors-container">
-            <p class="authors">
-              Maijunxian Wang, Ruisi Wang, Juyi Lin, Ran Ji, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai, Hokin Deng
-            </p>
-            <button class="authors-toggle">show all</button>
-          </div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2602.20159">Paper</a><span class="sep">/</span>
-            <a href="https://video-reason.com/">Website</a><span class="sep">/</span>
-            <a href="https://github.com/Video-Reason/VBVR-EvalKit">EvalKit</a><span class="sep">/</span>
-            <a href="https://github.com/Video-Reason/VBVR-DataFactory">Cloud Infra</a><span class="sep">/</span>
-            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset">Training Dataset</a><span class="sep">/</span>
-            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data">Eval Dataset</a><span class="sep">/</span>
-            <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard">Leaderboard</a><span class="sep">/</span>
-            <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2">Model</a>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- /.grid -->
-  </div> <!-- /#main -->
-
-  <script>
-    // Isotope grid.
-    var $grid = $('.grid').isotope({
-      itemSelector: '.list-item',
-      layoutMode: 'fitRows',
-      transitionDuration: 0,
-      stagger: 10,
-      initLayout: false,
-      getSortData: {
-        name: '.name',
-        symbol: '.symbol',
-        number: '.number parseInt',
-        category: '[data-category]',
-        weight: function (itemElem) {
-          var weight = $(itemElem).find('.weight').text();
-          return parseFloat(weight.replace(/[\(\)]/g, ''));
-        }
-      }
-    });
-
-    // Bind filter button click.
-    $('#filters').on('click', 'button', function () {
-      var filterValue = $(this).attr('data-filter');
-      localStorage.setItem('filterValue', filterValue);
-      $grid.isotope({ filter: filterValue });
-    });
-
-    // Change is-checked class on buttons.
-    $('.button-group').each(function (i, buttonGroup) {
-      var $buttonGroup = $(buttonGroup);
-      $buttonGroup.on('click', 'button', function () {
-        $buttonGroup.find('.is-checked').removeClass('is-checked');
-        $(this).addClass('is-checked');
-      });
-    });
-
-    function update_isotope() {
-      var defaultFilterValue = localStorage.getItem('filterValue');
-      if (defaultFilterValue == null) {
-        defaultFilterValue = ".publication";
-      }
-      $grid.isotope({ filter: defaultFilterValue });
-
-      var buttons = document.getElementsByClassName("button");
-      for (var currButton of buttons) {
-        if (currButton.getAttribute('data-filter') == defaultFilterValue) {
-          currButton.classList.add('is-checked');
-        } else {
-          currButton.classList.remove('is-checked');
-        }
-      }
-    }
-
-    update_isotope();
-
-    // Author list expand/collapse.
-    document.addEventListener('click', function (e) {
-      if (e.target.classList.contains('authors-toggle')) {
-        var container = e.target.closest('.authors-container');
-        var isExpanded = container.classList.toggle('expanded');
-        e.target.textContent = isExpanded ? 'show fewer' : 'show all';
-      }
-    });
-  </script>
+<body>
+  <main>
+    <p>This site now lives at <a href="https://hokindeng.com/">hokindeng.com</a>.</p>
+    <p class="muted">Redirecting…</p>
+  </main>
+  <script>location.replace("https://hokindeng.com/" + location.search + location.hash);</script>
 </body>
 </html>

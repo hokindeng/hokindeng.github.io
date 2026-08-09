@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hokin Deng — hokindeng.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://hokindeng.com/">
+<meta name="robots" content="noindex, follow">
+<style>
+  html { color-scheme: light dark; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    font: 16px/1.6 "Asap", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #fff; color: #111;
+    padding: 2rem; text-align: center;
+  }
+  @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; } }
+  a { color: inherit; }
+  p { margin: .4rem 0; }
+  .muted { opacity: .6; font-size: .875rem; }
+</style>
+</head>
+<body>
+  <main>
+    <p>This site now lives at <a id="target" href="https://hokindeng.com/">hokindeng.com</a>.</p>
+    <p class="muted">Redirecting…</p>
+  </main>
+  <script>
+    // Carry the requested path over, so old deep links such as
+    // /share/ and /index_andy.html land on the same page at the new host.
+    var dest = "https://hokindeng.com" + location.pathname + location.search + location.hash;
+    document.getElementById("target").href = dest;
+    location.replace(dest);
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=https://hokindeng.com/"></noscript>
+</body>
+</html>
